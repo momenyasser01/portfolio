@@ -3,7 +3,12 @@ import Image from "next/image";
 
 const ProjectLeft = () => {
   return (
-    <div className="flex flex-row justify-center items-center rounded-lg gap-4 dark:hover:bg-gray-900/65 hover:bg-gray-100/65 dark:hover:border-[1px] border-transparent hover:border-gray-800 h-90 mt-12">
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://cairometro.baraa.app/"
+      className="flex flex-row justify-center items-center rounded-lg gap-4 dark:hover:bg-gray-900/65 hover:bg-gray-100/65 dark:hover:border-[1px] border-transparent hover:border-gray-800 h-90 mt-12"
+    >
       <div className="flex flex-col justify-end items-start gap-4">
         <p className="dark:text-white text-[#0D0D0D] text-xl pl-4">
           Cairo Metro
@@ -29,7 +34,7 @@ const ProjectLeft = () => {
         width={580}
         height={580}
       />
-    </div>
+    </a>
   );
 };
 
