@@ -7,7 +7,7 @@ const ProjectRight = () => {
       <Image
         src="/tickets22.png"
         alt="Tickets22"
-        className="rounded-lg mr-4"
+        className="rounded-lg ml-4"
         width={580}
         height={580}
       />
