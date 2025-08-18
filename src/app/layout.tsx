@@ -14,11 +14,6 @@ const geist = Geist({
   subsets: ["latin"],
 });
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -37,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geist.variable} ${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased`}
+        className={`${geist.variable} ${geistMono.variable} ${inter.variable} antialiased font-geist`}
       >
         <ThemeProvider>{children}</ThemeProvider>
       </body>
