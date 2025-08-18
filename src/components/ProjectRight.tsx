@@ -1,37 +1,33 @@
 import Tag from "./Tag";
 import Image from "next/image";
 
-const ProjectRight = () => {
+interface ProjectProps {
+  name: string;
+  description: string;
+  image: string;
+  tags: Array<string>;
+}
+
+const ProjectRight = ({ name, description, image, tags }: ProjectProps) => {
   return (
     <a
       target="_blank"
       rel="noopener noreferrer"
       href="https://world-cup-client-microservice.vercel.app/"
-      className="flex flex-row justify-center items-center rounded-lg gap-4 dark:hover:bg-gray-900/65 hover:bg-gray-100/65 dark:hover:border-[1px] border-transparent hover:border-gray-800 h-90 mt-12"
+      className="flex flex-row rounded-lg gap-4 dark:hover:bg-gray-900/65 hover:bg-gray-100/65 dark:hover:border-[1px] dark:border border-transparent hover:border-gray-800 w-full h-[313px] mt-12"
     >
-      <Image
-        src="/tickets22.png"
-        alt="Tickets22"
-        className="rounded-lg ml-4"
-        width={580}
-        height={580}
-      />
-      <div className="flex flex-col justify-end items-start gap-4">
-        <p className="dark:text-white text-[#0D0D0D] text-xl pl-4">Tickets22</p>
-        <p className="text-[#A1A1A1] pl-4">
-          A simple and intuitive ticket booking system that allows users to
-          search, reserve, and manage event tickets with ease.
-        </p>
-        <div className="flex flex-row justify-start gap-2 pl-2">
-          <Tag name="React" />
-          <Tag name="Tailwind CSS" />
-          <Tag name="Node.js" />
-          <Tag name="Express" />
-          <Tag name="Kafka" />
-          <Tag name="MongoDB" />
+      <div className="flex relative justify-center items-center h-72 w-1/2 mt-3 ml-3">
+        <Image className="rounded-lg" src={image} alt="Tickets22" fill />
+      </div>
+      <div className="flex flex-col justify-end items-start gap-4 w-1/2 pb-10">
+        <p className="dark:text-white text-[#0D0D0D] text-xl pl-4">{name}</p>
+        <p className="dark:text-[#A1A1A1] text-gray-500 pl-4">{description}</p>
+        <div className="grid grid-cols-3 gap-2 pl-2">
+          {tags.map((tag) => (
+            <Tag key={tag} name={tag} />
+          ))}
         </div>
       </div>
-      <div className="hidden h-full border-[1px] border-gray-800"></div>
     </a>
   );
 };
