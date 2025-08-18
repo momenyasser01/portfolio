@@ -9,8 +9,8 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const geist = Geist({
-  variable: "--font-geist",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geist.variable} ${geistMono.variable} ${inter.variable} antialiased font-geist`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased font-geist`}
       >
         <ThemeProvider>{children}</ThemeProvider>
       </body>
